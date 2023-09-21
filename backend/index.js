@@ -6,7 +6,7 @@ const port = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("", (req, res) => {
+app.get("/users", (req, res) => {
   pool.getConnection((err, connection) => {
     if (err) throw err;
     console.log(`connected as id ${connection.threadId}`);
